@@ -30,6 +30,11 @@ export default {
           primary: "#282828",
           secondary: "#929292",
         },
+        calendar: {
+          streak: "#FFFCAB",
+          missed: "#FFC0AB",
+          current: "#FFDD57",
+        },
       },
     },
   },

@@ -32,11 +32,11 @@ const FeaturedStatCard = ({
         {`${changePercentage}% since last ${timePeriod}`}
       </div>
       <div className="graph mt-4">
-        <div className="flex items-end h-16 gap-2">
+        <div className="flex items-end h-16 gap-1.5">
           {[...Array(12)].map((_, i) => (
             <div
               key={i}
-              className={`w-full bg-accent-${color} rounded w-2`}
+              className={`w-full bg-accent-${color} rounded w-1.5`}
               style={{ height: `${Math.random() * 100}%` }}
             />
           ))}

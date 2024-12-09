@@ -6,6 +6,9 @@ import { BsFire } from "react-icons/bs";
 import FeaturedStatCard from "./FeaturedStatCard";
 import NavBar from "./NavBar";
 import TextEntryCard from "./TextEntryCard";
+import AudioEntryCard from "./AudioEntryCard";
+import VideoEntryCard from "./VideoEntryCard";
+import Calendar from "./Calendar";
 
 const featuredStats = [
   {
@@ -34,6 +37,40 @@ const featuredStats = [
   },
 ];
 
+const exampleCalendarProps = {
+  // Dates that were missed (user should have journaled but didn't)
+  missedDays: ["2024-12-01", "2024-12-02", "2024-12-03"],
+
+  // Theme can be "light" or "dark"
+  theme: "light" as const,
+
+  // Journal entries with their types
+  journalTypes: {
+    // Day with all types of entries
+    "2024-12-01": {
+      text: true,
+      video: true,
+      audio: true,
+    },
+    // Day with just text and audio
+    "2024-12-02": {
+      text: true,
+      audio: true,
+    },
+    // Day with only video
+    "2024-12-03": {
+      video: true,
+    },
+    // Day with text only
+    "2024-12-04": {
+      text: true,
+    },
+    "2024-12-09": {
+      text: true,
+    },
+  },
+};
+
 const Dashboard = () => {
   return (
     <div className="px-8 pt-4 bg-background-light min-h-screen">
@@ -47,15 +84,15 @@ const Dashboard = () => {
             ))}
           </div>
           <div className="text-center">your activity</div>
-          <div className="grid grid-cols-2">
+          <div className="grid grid-cols-2 gap-4">
             <TextEntryCard />
-            <div>
-              <div>Audio recording</div>
-              <div>Video clip</div>
+            <div className="flex flex-col gap-4">
+              <AudioEntryCard />
+              <VideoEntryCard />
             </div>
           </div>
         </div>
-        <div className="">
+        <div className="flex flex-col gap-4">
           <div className="profile-overview flex flex-col gap-4">
             <div className="greetings-with-avatar flex gap-4 items-center justify-center">
               <div className="avatar w-20 rounded-full overflow-hidden border-4 border-white flex-shrink-0">
@@ -100,7 +137,9 @@ const Dashboard = () => {
               + New Entry
             </div>
           </div>
-          <div className="calendar-container"></div>
+          <div className="calendar-container rounded-xl overflow-hidden">
+            <Calendar {...exampleCalendarProps} />
+          </div>
         </div>
       </div>
     </div>
