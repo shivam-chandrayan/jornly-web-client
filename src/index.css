@@ -50,6 +50,13 @@ button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
 }
 
+.square-image {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+}
+
 /* @media (prefers-color-scheme: light) {
   :root {
     color: #213547;
