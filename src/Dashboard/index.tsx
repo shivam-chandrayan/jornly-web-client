@@ -24,7 +24,7 @@ const featuredStats = [
 
 const Dashboard = () => {
   return (
-    <>
+    <div className="mx-8 mt-4">
       <NavBar />
 
       <div className="main-content grid grid-cols-3">
@@ -73,7 +73,7 @@ const Dashboard = () => {
           <div className="calendar-container"></div>
         </div>
       </div>
-    </>
+    </div>
   );
 };
 
