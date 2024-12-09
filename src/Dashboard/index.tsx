@@ -24,7 +24,7 @@ const featuredStats = [
 
 const Dashboard = () => {
   return (
-    <div className="mx-8 mt-4">
+    <div className="px-8 pt-4 bg-background-light min-h-screen">
       <NavBar />
 
       <div className="main-content grid grid-cols-3">

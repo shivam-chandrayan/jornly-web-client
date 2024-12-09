@@ -6,6 +6,23 @@ export default {
       fontFamily: {
         Rampart: ["Montserrat", "sans-serif"],
       },
+      colors: {
+        primary: "#12C386",
+        secondary: "#052E16",
+        accent: {
+          orange: "#F59E0B",
+          green: "#12C386",
+          blue: "#06B6D4",
+        },
+        background: {
+          light: "#F4F6F9",
+          dark: "#000102",
+        },
+        text: {
+          primary: "#282828",
+          secondary: "#929292",
+        },
+      },
     },
   },
   plugins: [],
