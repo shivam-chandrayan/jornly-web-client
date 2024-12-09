@@ -1,5 +1,13 @@
 /** @type {import('tailwindcss').Config} */
 export default {
+  safelist: [
+    "text-accent-orange",
+    "text-accent-green",
+    "text-accent-blue",
+    "bg-accent-orange",
+    "bg-accent-green",
+    "bg-accent-blue",
+  ],
   content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
     extend: {

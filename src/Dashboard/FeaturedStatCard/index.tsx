@@ -1,8 +1,12 @@
+import { IconType } from "react-icons";
+
 interface FeaturedStatCardProps {
   title: string;
   stat: string;
   changePercentage: number;
   timePeriod: string;
+  color: string;
+  icon: IconType;
 }
 
 const FeaturedStatCard = ({
@@ -10,21 +14,29 @@ const FeaturedStatCard = ({
   stat,
   changePercentage,
   timePeriod,
+  color,
+  icon,
 }: FeaturedStatCardProps) => {
   return (
     <div className="">
-      <div className="top-icon"></div>
-      <div className="title">{title}</div>
-      <div className="stat">{stat}</div>
-      <div className="change-percentage">
+      <div className={"top-icon text-4xl"}>
+        {icon({ className: `text-accent-${color}` })}
+      </div>
+      <div className="title text-lg font-semibold">{title}</div>
+      <div className="stat text-4xl font-semibold mt-1">{stat}</div>
+      <div
+        className={`change-percentage text-sm font-regular ${
+          changePercentage > 0 ? "text-green-500" : "text-red-500"
+        }`}
+      >
         {`${changePercentage}% since last ${timePeriod}`}
       </div>
-      <div className="graph">
+      <div className="graph mt-4">
         <div className="flex items-end h-16 gap-2">
           {[...Array(12)].map((_, i) => (
             <div
               key={i}
-              className="w-full bg-gray-600 rounded w-2"
+              className={`w-full bg-accent-${color} rounded w-2`}
               style={{ height: `${Math.random() * 100}%` }}
             />
           ))}
