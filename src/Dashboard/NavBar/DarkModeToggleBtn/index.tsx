@@ -7,12 +7,12 @@ const DarkModeToggleBtn = () => {
   return (
     <button
       onClick={() => setIsDarkMode(!isDarkMode)}
-      className="flex items-center rounded-full p-2 bg-gray-200 hover:bg-gray-300 transition-colors duration-300"
+      className="flex items-center rounded-full p-2 border-2 border-primary text-primary hover:bg-primary hover:text-white transition-colors duration-300"
     >
       {isDarkMode ? (
-        <MdOutlineDarkMode className="text-gray-700 text-2xl" />
+        <MdOutlineDarkMode className="text-2xl" />
       ) : (
-        <MdOutlineLightMode className="text-gray-700 text-2xl" />
+        <MdOutlineLightMode className="text-2xl" />
       )}
     </button>
   );
